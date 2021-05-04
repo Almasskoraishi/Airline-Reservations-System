@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AirlineReservationSystemService WSDL service -->
+
+  <service name="AirlineReservationSystem" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServiceElement" value="AirlineReservationSystemService"/>
+      <parameter name="schemaQualified" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServicePort" value="AirlineReservationSystem"/>
+      <parameter name="className" value="AirlineReservationSystem"/>
+      <parameter name="wsdlPortType" value="AirlineReservationSystem"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://DefaultNamespace" name="main" qname="operNS:main" soapAction="">
+        <parameter xmlns:pns="http://DefaultNamespace" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:args" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://DefaultNamespace" name="printMenu" qname="operNS:printMenu" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://DefaultNamespace" xmlns:retNS="http://DefaultNamespace" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="assignSeat" qname="operNS:assignSeat" returnQName="retNS:assignSeatReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://DefaultNamespace" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://DefaultNamespace" name="printGreeting" qname="operNS:printGreeting" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="printGreeting main assignSeat printMenu"/>
+
+  </service>
+</deployment>

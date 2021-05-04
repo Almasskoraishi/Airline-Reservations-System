@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="main">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="args" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mainResponse">
+    <complexType/>
+   </element>
+   <element name="printMenu">
+    <complexType/>
+   </element>
+   <element name="printMenuResponse">
+    <complexType/>
+   </element>
+   <element name="assignSeat">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="assignSeatResponse">
+    <complexType>
+     <sequence>
+      <element name="assignSeatReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="printGreeting">
+    <complexType/>
+   </element>
+   <element name="printGreetingResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="printMenuRequest">
+
+      <wsdl:part element="impl:printMenu" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="printGreetingResponse">
+
+      <wsdl:part element="impl:printGreetingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="printGreetingRequest">
+
+      <wsdl:part element="impl:printGreeting" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="printMenuResponse">
+
+      <wsdl:part element="impl:printMenuResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignSeatRequest">
+
+      <wsdl:part element="impl:assignSeat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="assignSeatResponse">
+
+      <wsdl:part element="impl:assignSeatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part element="impl:main" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+      <wsdl:part element="impl:mainResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AirlineReservationSystem">
+
+      <wsdl:operation name="main">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printMenu">
+
+         <wsdl:input message="impl:printMenuRequest" name="printMenuRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:printMenuResponse" name="printMenuResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignSeat">
+
+         <wsdl:input message="impl:assignSeatRequest" name="assignSeatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:assignSeatResponse" name="assignSeatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printGreeting">
+
+         <wsdl:input message="impl:printGreetingRequest" name="printGreetingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:printGreetingResponse" name="printGreetingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AirlineReservationSystemSoapBinding" type="impl:AirlineReservationSystem">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printMenu">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="printMenuRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="printMenuResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="assignSeat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="assignSeatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="assignSeatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printGreeting">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="printGreetingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="printGreetingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AirlineReservationSystemService">
+
+      <wsdl:port binding="impl:AirlineReservationSystemSoapBinding" name="AirlineReservationSystem">
+
+         <wsdlsoap:address location="http://localhost:8080/AirlineReservation_System/services/AirlineReservationSystem"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
